@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="captiveportal-favicon.ico" />
+  <title>Calvin's Guest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      background: url(captiveportal-back.png);
+      background-color: #444;
+      background: url(captiveportal-pinlayer2.png),url(captiveportal-pinlayer1.png),url(captiveportal-back.png);    
+    }
+    .vertical-offset-100 {
+      padding-top:100px;
+    }    
+  </style>
+  <script src="captiveportal-jquery-1.11.1.min.js"></script>
+  <script src="captiveportal-bootstrap.min.js"></script>
+</head>
+<body>
+  <script src="captiveportal-tweenlite.min.js"></script>
+
+  <div class="container">
+    <div class="row vertical-offset-100">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Network Access Agreements</h3>
+          </div>
+          <div class="panel-body">
+            <form method="post" action="$PORTAL_ACTION$" accept-charset="UTF-8" role="form">
+              <fieldset>
+                <h4 class="text-center" style="color:red">Invalid secret word. Have you tried asking Calvin?</h4>
+                <!-- Required input boxes for portal page to work. Only required if user authentication is needed. -->
+                <p>You are responsible for the security and appropriate use of Trungthi Bui's (hereby Calvin) network resources under your control. Using Calvin's resources for the following is strictly prohibited:</p>
+                <ul>
+                  <li>Causing a security breach to either Calvin or other network resources, including, but not limited to, accessing data, servers, or accounts to which you are not authorized; circumventing user authentication on any device; or sniffing network traffic. </li>
+
+                  <li>Causing a disruption of service to either Calvin or other network resources, including, but not limited to, ICMP floods, packet spoofing, denial of service, heap or buffer overflows, and forged routing information for malicious purposes.</li>
+
+                  <li>Introducing honeypots, honeynets, or similar technology on Calvin's network.</li>
+
+                  <li>Violating copyright law, including, but not limited to, illegally duplicating or transmitting copyrighted pictures, music, video, and software. </li>
+
+                  <li>Exporting or importing software, technical information, encryption software, or technology in violation of international or regional export control laws.</li>
+
+                  <li>Use of the Internet or Calvin's network that violates local laws.</li>
+
+                  <li>Intentionally introducing malicious code, including, but not limited to, viruses, worms, Trojan horses, e-mail bombs, spyware, adware, and keyloggers. </li>
+
+                  <li>Port scanning or security scanning on a production network unless authorized in advance by Information Security.</li>
+                </ul>
+                <div class="form-group">
+                  <input name="auth_user" type="text" placeholder="Super secret word?" class="form-control">
+                </div>
+                <input name="auth_pass" type="password" class="hidden" value="password">
+                <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$">
+                <input class="btn btn-lg btn-success btn-block" name="accept" type="submit" value="I Agree">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><script type="text/javascript">
+  $(document).ready(function(){
+    $(document).mousemove(function(e){
+     TweenLite.to($('body'), 
+      .5, 
+      { css: 
+        {
+          backgroundPosition: ""+ parseInt(event.pageX/8) + "px "+parseInt(event.pageY/'12')+"px, "+parseInt(event.pageX/'15')+"px "+parseInt(event.pageY/'15')+"px, "+parseInt(event.pageX/'30')+"px "+parseInt(event.pageY/'30')+"px"
+        }
+      });
+   });
+  });</script>
+</body>
+</html>
