@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="captiveportal-favicon.ico" />
+  <title>Calvin's Guest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="captiveportal-bootstrap.min.css" rel="stylesheet">
+  <style type="text/css">
+    body {
+      background: url(captiveportal-back.png);
+      background-color: #444;
+      background: url(captiveportal-pinlayer2.png),url(captiveportal-pinlayer1.png),url(captiveportal-back.png);    
+    }
+    .vertical-offset-100 {
+      padding-top:100px;
+    }    
+  </style>
+  <script src="captiveportal-jquery-1.11.1.min.js"></script>
+  <script src="captiveportal-bootstrap.min.js"></script>
+</head>
+<body>
+  <script src="captiveportal-tweenlite.min.js"></script>
+
+  <div class="container">
+    <div class="row vertical-offset-100">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Welcome!</h3>
+          </div>
+          <div class="panel-body">
+              <fieldset>
+                <h1>Success!</h1>
+                <p> 
+                    You are now connected to the network.
+                </p>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><script type="text/javascript">
+  $(document).ready(function(){
+    $(document).mousemove(function(e){
+     TweenLite.to($('body'), 
+      .5, 
+      { css: 
+        {
+          backgroundPosition: ""+ parseInt(event.pageX/8) + "px "+parseInt(event.pageY/'12')+"px, "+parseInt(event.pageX/'15')+"px "+parseInt(event.pageY/'15')+"px, "+parseInt(event.pageX/'30')+"px "+parseInt(event.pageY/'30')+"px"
+        }
+      });
+   });
+  });</script>
+</body>
+</html>
